@@ -1,4 +1,4 @@
-# fetch-es
+# fetch-es [![npm version](https://badge.fury.io/js/%40mikeie%2Ffetch-es.svg)](https://badge.fury.io/js/%40mikeie%2Ffetch-es)
 search the elasticsearch database using AND and suggester via elasticsearch node.js client
 
 The elasticsearch node (a petite VPS) currently hosts some corpora (united nations copurs, examples sentences from some bilingual dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
