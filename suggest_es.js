@@ -87,7 +87,7 @@ async function suggest_es(query = "", index = "") {
     });
     logger.trace("suggester res:", result.body);
     // res = result.body.hits.hits;
-    res = result.body.hits.hits.map((el) => el.highlight.text[0]);
+    res = result.body.hits.hits.map(el => el.highlight.text[0]);
     logger.debug(">>> res: ", res);
   } catch (e) {
     logger.error("suggester error: ", e.message);

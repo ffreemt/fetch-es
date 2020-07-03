@@ -73,8 +73,8 @@ async function search_es(query = "", index = "") {
     // res = result.body.hits.hits;
     // res = result.body.hits.hits[0].highlight.text
     // res = result.body.hits.hits.map((el) => el.highlight.text);
-    res = result.body.hits.hits.map((el) => ({text: el.highlight.text[0]}));
-    // res = result.body.hits.hits.map((el) => el.highlight.text[0]);
+    res = result.body.hits.hits.map(el => ({text: el.highlight.text[0]}));
+    // res = result.body.hits.hits.map(el => el.highlight.text[0]);
     logger.debug(">>> res: ", res);
   } catch (e) {
     logger.error(e.message);
@@ -86,7 +86,7 @@ async function search_es(query = "", index = "") {
 
 // set LOG4JS_DEBUG=trace
 // node -r esm search_es.js
-// /* comment out this line to run the following
+/* comment out this line to run the following
 (async ()=>{
   let query = "test positive";
 

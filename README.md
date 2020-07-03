@@ -1,5 +1,7 @@
 # fetch-es
-search elasticsearch database using AND and suggester via elasticsearch node.js client
+search the elasticsearch database using AND and suggester via elasticsearch node.js client
+
+The elasticsearch node currently hosts some corpora (united nations copurs, examples sentences from some bilingual dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
 
 ---
 This package has three modules: `search_es`, `nspell_text` and `suggest_es`
@@ -22,11 +24,13 @@ Since `suggest_es` takes much longer than `search_es`, the normal procedure to s
     index = ["yhdcd", "dictcor", "uncor"];
   };...}`
 
-async function suggest_es(query = "", index = "") {...; if (!index) {
+`async function suggest_es(query = "", index = "") {...; if (!index) {
     index = ["yhdcd", "dictcor", "uncor"];
-  } ;...}
+  } ;...}`
 
 `search_es` and `suggest_es` return: [str]
+
+The essencce of implementation:
 ```js
 let r0;
 let res;
@@ -37,3 +41,4 @@ res = r0.body.hits.hits.map(el => el.highlight.text[0])
 
 Refer to search_es.js, suggest_es.js and files in the `test` directory.
 
+### Elasticsearch node:
