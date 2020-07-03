@@ -15,7 +15,7 @@ This package has three modules: `search_es`, `nspell_text` and `suggest_es`
 ### suggest_es
 `suggest_es`: if the `search_es` does not return any matched result, `suggest_es` will attempt to suggest some closely matched result.
 
-Since `suggest_es` takes much longer than `search_es`, the normal procedure to search is: apply `nspell_text` to the query phrase or sentces, use `search_es` first. If `search_es` does not return anything, use `suggest_es`.
+Since `suggest_es` takes much longer than `search_es` (especially for long sentences), the normal procedure to search is: apply `nspell_text` to the query phrase or sentence, use `search_es` first. If `search_es` does not return anything, use `suggest_es`.
 
 ### Usage
 `search_es` and `suggest_es` are defined as follows.
