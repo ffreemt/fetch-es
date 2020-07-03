@@ -9,7 +9,7 @@ The elasticsearch node (a petite VPS) currently hosts some corpora (united natio
 ## Usage
 
 ```js
-const fetch_es = require("fetch-es");
+const fetch_es = require("@mikeie/fetch-es");
 
 let query = "test测试";
 fetch_es(query, index="uncor")
