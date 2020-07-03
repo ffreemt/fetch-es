@@ -14,6 +14,9 @@ log4js_extend(log4js, { path: __dirname, format: "(ln-@line:@column)" });
 logger.level = process.env.LOG4JS_DEBUG || "info";
 // logger.level = process.env.LOG4JS_DEBUG || "trace";
 
+// const nspell_text = require("./nspell_text")
+// const search_es = require("./search_es")
+
 const { Client } = require("@elastic/elasticsearch");
 // const { nspell_text } = require("./nspell_text");
 
@@ -41,6 +44,15 @@ async function suggest_es(query = "", index = "") {
   if (!index) {
     index = ["yhdcd", "dictcor", "uncor"];
   }
+
+  let res; // needed later anyway
+  // process query
+  // query = nspell_text(query)
+
+  // use search_es first
+  // res = search_es(query, index)
+  // if (res !== undefined && res.length)
+    // return res
 
   // search all english indices
   // if (!index) { index=["de-en"];} // search only earoparl-de-en aliase
@@ -79,7 +91,7 @@ async function suggest_es(query = "", index = "") {
     },
   };
 
-  let res;
+  // let res;
   try {
     const result = await client.search({
       index: index,

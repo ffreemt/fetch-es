@@ -1,6 +1,6 @@
 {
   "name": "@mikeie/fetch-es",
-  "version": "0.0.1a",
+  "version": "0.0.2",
   "description": "search elasticsearch database using AND and suggester via elasticsearch node.js client",
   "main": "index.js",
   "scripts": {
