@@ -33,7 +33,7 @@ const client = new Client({
 // client.info(console.log);
 
 // export default async function suggest_es(query = "", index = "") {
-module.exports = suggest_es
+module.exports = suggest_es;
 async function suggest_es(query = "", index = "") {
 // async function suggest_es(query = "", index = "") {
   if (!query) {

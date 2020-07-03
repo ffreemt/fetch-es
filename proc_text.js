@@ -35,4 +35,4 @@ function proc_text(query){
 
 // console.log(proc_text(query));
 
-module.exports = proc_text
+module.exports = proc_text;

@@ -46,7 +46,7 @@ const consola = require("consola");
 consola.level = process.env.consola_debug || 3;
 
 // export default function nspell_text(query){
-module.exports = nspell_text
+module.exports = nspell_text;
 function nspell_text(query){
   if (!query){ return "";}
 

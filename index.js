@@ -12,7 +12,7 @@ const nspell_text = require("./nspell_text");
 const suggest_es = require("./suggest_es");
 
 
-module.exports = fetch_es
+module.exports = fetch_es;
 async function fetch_es(query, index="") {
   query = nspell_text(query);
   if (!query) {
@@ -45,4 +45,4 @@ async function fetch_es(query, index="") {
 
   return res;
 
-};
+}
