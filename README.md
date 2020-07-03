@@ -32,8 +32,14 @@ Since `suggest_es` takes much longer than `search_es` (especially for long sente
 
 The essencce of implementation:
 ```js
-let r0;
-let res;
+const { Client } = require("@elastic/elasticsearch");
+const client = new Client({
+  node: ES_NODE,
+  maxRetries: 8,
+  requestTimeout: 60000,
+  sniffOnStart: true,
+});
+let r0, res;
 client.search({ index: index, body: body, }).then( r => { console.log(r); r0 = r; }).catch(e => {console.log(e);});
 
 res = r0.body.hits.hits.map(el => el.highlight.text[0])
