@@ -1,0 +1,35 @@
+{
+  "name": "@mikeie/fetch-es",
+  "version": "0.0.1a",
+  "description": "search elasticsearch database using AND and suggester via elasticsearch node.js client",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r esm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffreemt/fetch-es.git"
+  },
+  "keywords": [
+    "elasticsearch"
+  ],
+  "author": "ffreemt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ffreemt/fetch-es/issues"
+  },
+  "homepage": "https://github.com/ffreemt/fetch-es#readme",
+  "dependencies": {
+    "@elastic/elasticsearch": "6",
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
+    "consola": "^2.14.0",
+    "dictionary-en": "^3.0.1",
+    "eslint": "^7.3.1",
+    "esm": "^3.2.25",
+    "log4js": "^6.3.0",
+    "log4js-extend": "^0.2.1",
+    "nspell": "^2.1.2",
+    "typo-js": "^1.1.0"
+  }
+}
