@@ -3,6 +3,21 @@ search the elasticsearch database using AND and suggester via elasticsearch node
 
 The elasticsearch node (a petite VPS) currently hosts some corpora (united nations copurs, examples sentences from some bilingual dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
 
+## Installation
+`npm i @mikeie/fetch-es`
+
+## Usage
+
+```js
+const fetch_es = require("fetch-es");
+
+let query = "test测试";
+fetch_es(query, index="uncor")
+.then(res => console.log(res))
+.catch(e => console.log(e.message))
+
+```
+
 ---
 This package has three modules: `search_es`, `nspell_text` and `suggest_es`
 
@@ -17,7 +32,7 @@ This package has three modules: `search_es`, `nspell_text` and `suggest_es`
 
 Since `suggest_es` takes much longer than `search_es` (especially for long sentences), the normal procedure to search is: apply `nspell_text` to the query phrase or sentence, use `search_es` first. If `search_es` does not return anything, use `suggest_es`.
 
-### Usage
+### Miscellany 
 `search_es` and `suggest_es` are defined as follows.
 
 `async function search_es(query = "", index = "") {...; if (!index) {
