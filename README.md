@@ -1,7 +1,7 @@
 # fetch-es
 search the elasticsearch database using AND and suggester via elasticsearch node.js client
 
-The elasticsearch node currently hosts some corpora (united nations copurs, examples sentences from some bilingual dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
+The elasticsearch node (a petite VPS) currently hosts some corpora (united nations copurs, examples sentences from some bilingual dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
 
 ---
 This package has three modules: `search_es`, `nspell_text` and `suggest_es`
@@ -40,5 +40,3 @@ res = r0.body.hits.hits.map(el => el.highlight.text[0])
 ```
 
 Refer to search_es.js, suggest_es.js and files in the `test` directory.
-
-### Elasticsearch node:
