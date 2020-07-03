@@ -16,11 +16,13 @@ This package has three modules: `search_es`, `nspell_text` and `suggest_es`
 Since `suggest_es` takes much longer than `search_es`, the normal procedure to search is: apply `nspell_text` to the query phrase or sentces, use `search_es` first. If `search_es` does not return anything, use `suggest_es`.
 
 ### Usage
+`search_es` and `suggest_es` are defined as follows.
+
 `async function search_es(query = "", index = "") {...; if (!index) {
     index = ["yhdcd", "dictcor", "uncor"];
   };...}`
 
-async function search_es(query = "", index = "") {...; if (!index) {
+async function suggest_es(query = "", index = "") {...; if (!index) {
     index = ["yhdcd", "dictcor", "uncor"];
   } ;...}
 
