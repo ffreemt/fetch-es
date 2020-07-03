@@ -1,4 +1,4 @@
-# fetch-es [![CodeFactor](https://www.codefactor.io/repository/github/ffreemt/fetch-es/badge)](https://www.codefactor.io/repository/github/ffreemt/fetch-es)[![npm version](https://badge.fury.io/js/%40mikeie%2Ffetch-es.svg)](https://badge.fury.io/js/%40mikeie%2Ffetch-es)
+# fetch-es ![Node.js CI](https://github.com/ffreemt/fetch-es/workflows/Node.js%20CI/badge.svg)[![CodeFactor](https://www.codefactor.io/repository/github/ffreemt/fetch-es/badge)](https://www.codefactor.io/repository/github/ffreemt/fetch-es)[![npm version](https://badge.fury.io/js/%40mikeie%2Ffetch-es.svg)](https://badge.fury.io/js/%40mikeie%2Ffetch-es)
 search the elasticsearch database using AND and suggester via elasticsearch node.js client
 
 The elasticsearch node (a petite VPS) currently hosts some corpora (united nations copurs, examples sentences from some bilingual dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
@@ -32,7 +32,7 @@ This package has three modules: `search_es`, `nspell_text` and `suggest_es`
 
 Since `suggest_es` takes much longer than `search_es` (especially for long sentences), the normal procedure to search is: apply `nspell_text` to the query phrase or sentence, use `search_es` first. If `search_es` does not return anything, use `suggest_es`.
 
-### Miscellany 
+### Miscellany
 `search_es` and `suggest_es` are defined as follows.
 
 `async function search_es(query = "", index = "") {...; if (!index) {
