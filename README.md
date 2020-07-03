@@ -15,4 +15,16 @@ This package has three modules: `search_es`, `nspell_text` and `suggest_es`
 
 Since `suggest_es` takes much longer than `search_es`, the normal procedure to search is: apply `nspell_text` to the query phrase or sentces, use `search_es` first. If `search_es` does not return anything, use `suggest_es`.
 
-## test
+### Usage
+
+`search_es` and `suggest_es` return: [str]
+```js
+let r0;
+let res;
+client.search({ index: index, body: body, }).then( r => { console.log(r); r0 = r; }).catch(e => {console.log(e);});
+
+res = r0.body.hits.hits.map(el => el.highlight.text[0])
+```
+
+Refer to search_es.js, suggest_es.js and files in the `test` directory.
+
