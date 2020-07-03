@@ -69,7 +69,7 @@ describe("@3 test nspell_text single aaaaxxx ", () => {
       let query = "aaaaxxx ";
       let result = nspell_text(query);
       consola.info(`@3 #1: [${result}]`);
-      expect(result).to.equal(" ");
+      expect(result).to.equal("");
     });
   });
 });
@@ -77,10 +77,10 @@ describe("@3 test nspell_text single aaaaxxx ", () => {
 describe("@4 test nspell_text mixed English and Chinese", () => {
   context(" sentence 2 ", () => {
     it(" #1 should fix English text [woo, test] ", () => {
-      let query = " wo我好tett";
+      let query = "wo我好tett";
       let result = nspell_text(query);
       consola.info(`@4 #1: [${result}]`);
-      expect(result).to.equal("woo 我好 test");
+      expect(result.trim()).to.equal("woo 我好 test");
     });
   });
 });

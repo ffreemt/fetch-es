@@ -49,7 +49,12 @@ consola.level = process.env.consola_debug || 3;
 module.exports = nspell_text
 function nspell_text(query){
   if (!query){ return "";}
-  let _ = query.split(/\s+/);
+
+  // let _ = query.split(/\s+/);
+
+  // insert space between English and Chinese
+  let re = /(?<=[a-zA-Z])(?![a-zA-Z])|(?<![a-zA-Z])(?=[a-zA-Z])/gm;
+  let _ = query.replace(re, " ").trim().split(/\s+/);
 
   let  res = _.map( (elm) => {
     // all ascii: 0, else -1
