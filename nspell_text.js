@@ -48,12 +48,14 @@ consola.level = process.env.consola_debug || 3;
 // export default function nspell_text(query){
 module.exports = nspell_text;
 function nspell_text(query){
-  if (!query){ return "";}
+  if (!query.trim()){ return "";}
 
   // let _ = query.split(/\s+/);
 
   // insert space between English and Chinese
-  let re = /(?<=[a-zA-Z])(?![a-zA-Z])|(?<![a-zA-Z])(?=[a-zA-Z])/gm;
+  // let re = /(?<=[a-zA-Z])(?![a-zA-Z])|(?<![a-zA-Z])(?=[a-zA-Z])/gm;
+  // let _ = query.replace(re, " ").trim().split(/\s+/);
+  let re = /(?<=[a-zA-Z])(?=[\u4e00-\u9fa5\d])|(?<=[\u4e00-\u9fa5\d])(?=[a-zA-Z])/gm;
   let _ = query.replace(re, " ").trim().split(/\s+/);
 
   let  res = _.map( (elm) => {
