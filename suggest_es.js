@@ -24,7 +24,8 @@ const { Client } = require("@elastic/elasticsearch");
 const client = new Client({
   // node: "http://localhost:9200",
   // node: "http://173.82.212.65:1337/173.82.212.65:9200",
-  node: "http://173.82.240.230:1337/173.82.240.230:9200",
+  // node: "http://173.82.240.230:1337/173.82.240.230:9200",
+  node: "http://216.24.255.63:1337/216.24.255.63:9200",
   maxRetries: 8,
   requestTimeout: 60000,
   sniffOnStart: true,
