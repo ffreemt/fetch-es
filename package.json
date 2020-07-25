@@ -1,10 +1,10 @@
 {
   "name": "@mikeie/fetch-es",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "search elasticsearch database using AND and suggester via elasticsearch node.js client",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r esm"
+    "test": "mocha -r esm -t 4000"
   },
   "repository": {
     "type": "git",
