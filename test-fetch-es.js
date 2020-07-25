@@ -11,4 +11,4 @@ let query = "test测试tst";
 // fetch_es(query, index="earoparl-de-en") // index = ["yhdcd", "dictcor", "uncor"]; // earoparl-de-en xinhua
 fetch_es(query).then(r => {res = r; console.log(r); }).catch(e => console.log("catche: ", e.message));
 
-console.log(res)
+// console.log(res) // this does not work
