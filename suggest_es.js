@@ -102,6 +102,10 @@ async function suggest_es(query = "", index = "") {
     // res = result.body.hits.hits;
     res = result.body.hits.hits.map(el => el.highlight.text[0]);
     logger.debug(">>> res: ", res);
+
+    // attach time in ms
+    res.push(`(Search term(s): ${query}, took ${result.body.took} ms)`);
+
   } catch (e) {
     logger.error("suggester error: ", e.message);
     res = [];

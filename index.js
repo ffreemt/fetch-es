@@ -33,7 +33,8 @@ async function fetch_es(query, index="") {
     return res;
   }
 
-  if (res.length)
+  // if (res.length)
+  if (res.length > 1)
     return res;
 
   try {

@@ -23,14 +23,16 @@ describe("@1 search_es: AND returns results ", () => {
   it("#2 search_es('test') ", async () => {
     var result = await search_es("test");
     consola.debug(">>>#2:", result);
-    expect(result.length).to.equal(10);
+    // expect(result.length).to.equal(10);
+    expect(result.length).to.equal(11); // took time
   });
 
   let query = "developing countries jointly 国";
   it("#3 search_es: " + query, async () => {
     var result = await search_es(query);
     consola.debug("#3", result);
-    expect(result.length).to.equal(10);
+    // expect(result.length).to.equal(10);
+    expect(result.length).to.equal(11); // took time
   });
 });
 
@@ -39,6 +41,7 @@ describe("@2 search_es: 0 length", () => {
   it("#1 search_es: " + query, async () => {
     let result = await search_es(query);
     consola.debug("#1", result);
-    expect(result.length).to.equal(0);
+    // expect(result.length).to.equal(0);
+    expect(result.length).to.equal(1);
   });
 });
