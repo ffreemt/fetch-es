@@ -41,7 +41,7 @@ async function search_es(query = "", index = "") {
 
   // default index HERE
   if (!index) {
-    index = ["yhdcd", "dictcor", "uncor"];
+    index = ["yhdcd", "dictcor", "uncor"]; // earoparl-de-en xinhua
   }
 
   let default_operator = "AND";
